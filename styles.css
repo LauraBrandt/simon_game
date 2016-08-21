@@ -1,0 +1,471 @@
+/* The $width variable scales the whole game (all elements) up or down in size and spacing */
+@media screen and (max-width: 500px) {
+  body {
+    background: url("retina_wood_background.png");
+    /*via subtlepatterns.com*/
+    padding-top: 18.75px; }
+
+  #game_board {
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    height: 300px;
+    width: 300px; }
+
+  #background {
+    background-color: #222;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.3), 2px 2px 9px, -2px -2px 9px;
+    z-index: -1; }
+
+  .quarter {
+    position: absolute;
+    width: 135px;
+    height: 135px;
+    border-style: solid;
+    border-width: 2.4px; }
+
+  #red {
+    top: 15px;
+    left: 150px;
+    border-radius: 0 100% 0 0;
+    background-color: #F20000;
+    border-color: #bf0000; }
+
+  #red.light {
+    background-color: #ff2626;
+    border-color: #F20000; }
+
+  #green {
+    top: 15px;
+    left: 15px;
+    border-radius: 100% 0 0 0;
+    background-color: #00D000;
+    border-color: #009d00; }
+
+  #green.light {
+    background-color: #04ff04;
+    border-color: #00D000; }
+
+  #yellow {
+    top: 150px;
+    left: 15px;
+    border-radius: 0 0 0 100%;
+    background-color: #F2BD00;
+    border-color: #bf9500; }
+
+  #yellow.light {
+    background-color: #ffcf26;
+    border-color: #F2BD00; }
+
+  #blue {
+    top: 150px;
+    left: 150px;
+    background-color: #0010DC;
+    border-radius: 0 0 100% 0;
+    border-color: #000ca9;
+    color: #1021ff; }
+
+  #blue.light {
+    background-color: #1021ff;
+    border-color: #0010DC; }
+
+  #vertical_line {
+    position: absolute;
+    left: 144px;
+    top: 15px;
+    width: 12px;
+    height: 270px;
+    background-color: #222;
+    z-index: 1; }
+
+  #horizontal_line {
+    position: absolute;
+    left: 15px;
+    top: 144px;
+    width: 270px;
+    height: 12px;
+    background-color: #222;
+    z-index: 1; }
+
+  #center {
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    width: 150px;
+    height: 150px;
+    background-color: #dee;
+    border-radius: 100%;
+    border: 12px solid #222;
+    z-index: 2;
+    text-align: center; }
+    #center h2 {
+      margin: 0;
+      padding: 15px;
+      font-family: 'Racing Sans One', cursive;
+      font-size: 27px;
+      margin-bottom: -8.7px; }
+    #center .lbl {
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: bold;
+      font-size: 6.9px; }
+    #center #counter,
+    #center #start,
+    #center #strict {
+      position: absolute; }
+    #center #counter {
+      left: 46.2px; }
+    #center #counter-box {
+      width: 33.3px;
+      height: 25.05px;
+      border: 1.89px solid #222;
+      border-radius: 10px;
+      background-color: #51594C;
+      box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5), inset -1px -1px 1px rgba(255, 255, 255, 0.5);
+      color: #111;
+      font-size: 15px;
+      font-weight: bold;
+      font-family: "Roboto Mono", "Courier New", Courier, monospace; }
+    #center #counter-label {
+      padding-top: 1.89px; }
+    #center #start-button,
+    #center #strict-button {
+      cursor: pointer;
+      margin: auto;
+      width: 12.6px;
+      height: 12.6px;
+      border-radius: 100%;
+      /*need to fix this and set to % of width*/
+      box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.5), inset 0 -2px 3px 1px rgba(0, 0, 0, 0.8), 0 0 0 2.49px #222; }
+    #center #start-button:active,
+    #center #strict-button:active {
+      box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.5), 0 0 0 2.49px #222; }
+    #center #start {
+      top: 57px;
+      left: 15.6px; }
+    #center #start-button {
+      background-color: red; }
+    #center #strict {
+      top: 57px;
+      left: 87px; }
+    #center #strict-button {
+      background-color: yellow; }
+    #center #strict-light {
+      position: absolute;
+      top: -10.2px;
+      left: 9.9px;
+      width: 5.7px;
+      height: 5.7px;
+      border-radius: 100%;
+      border: 1.26px solid #222; }
+    #center .light-on {
+      background-color: red; }
+    #center .light-off {
+      background-color: #4d0000; }
+    #center #on-off-label {
+      z-index: -1; }
+      #center #on-off-label p {
+        position: absolute;
+        top: 105px; }
+      #center #on-off-label #on-label {
+        left: 35.4px; }
+      #center #on-off-label #off-label {
+        left: 79.65px; }
+    #center #on-off-toggle {
+      position: absolute;
+      top: 102.3px;
+      left: 49.5px;
+      width: 26.7px;
+      height: 14.4px;
+      border: 2px solid #222;
+      border-radius: 2px;
+      cursor: pointer;
+      background-color: #bbb;
+      font-size: 0;
+      /*To remove the extra space between the divs*/ }
+      #center #on-off-toggle .switch {
+        display: inline-block;
+        width: 50%;
+        height: 100%; }
+      #center #on-off-toggle .active {
+        background-color: red;
+        border-left: 2.4px solid #990000;
+        border-bottom: 2.1px solid #990000;
+        border-right: 0.9px solid #990000;
+        border-top: 0.9px solid #990000; }
+
+  #options {
+    position: relative;
+    top: -318px;
+    margin: auto;
+    width: 396px;
+    /* Make buttons closer to game board if screen is narrower */ } }
+  @media screen and (max-width: 500px) and (max-width: 396px) {
+    #options {
+      width: 300px; } }
+@media screen and (max-width: 500px) {
+    #options > button {
+      position: absolute;
+      width: 25.2px;
+      height: 25.2px;
+      border-radius: 100%;
+      outline: none;
+      box-shadow: 0px 1.875px 3.75px #aaa, inset 0px 1.251px 1.875px #fff; }
+    #options > button:active {
+      box-shadow: 0px 1px 2.49px #aaa; }
+    #options > button:hover {
+      background: #f4f4f4; }
+    #options #help {
+      padding: 3.45px; }
+      #options #help .material-icons {
+        font-size: 17.505px;
+        height: 17.505px;
+        width: 17.505px; }
+    #options #sound {
+      left: 370.8px;
+      padding: 5.1px; } }
+    @media screen and (max-width: 500px) and (max-width: 396px) {
+      #options #sound {
+        left: 274.8px; } }
+@media screen and (max-width: 500px) {
+      #options #sound .material-icons {
+        font-size: 15px;
+        height: 15px;
+        width: 15px; } }
+@media screen and (min-width: 501px) {
+  body {
+    background: url("retina_wood_background.png");
+    /*via subtlepatterns.com*/
+    padding-top: 30px; }
+
+  #game_board {
+    position: relative;
+    margin: auto;
+    margin-top: 48px;
+    height: 480px;
+    width: 480px; }
+
+  #background {
+    background-color: #222;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: inset -9.6px -9.6px 19.2px rgba(0, 0, 0, 0.3), 2px 2px 14.4px, -2px -2px 14.4px;
+    z-index: -1; }
+
+  .quarter {
+    position: absolute;
+    width: 216px;
+    height: 216px;
+    border-style: solid;
+    border-width: 3.84px; }
+
+  #red {
+    top: 24px;
+    left: 240px;
+    border-radius: 0 100% 0 0;
+    background-color: #F20000;
+    border-color: #bf0000; }
+
+  #red.light {
+    background-color: #ff2626;
+    border-color: #F20000; }
+
+  #green {
+    top: 24px;
+    left: 24px;
+    border-radius: 100% 0 0 0;
+    background-color: #00D000;
+    border-color: #009d00; }
+
+  #green.light {
+    background-color: #04ff04;
+    border-color: #00D000; }
+
+  #yellow {
+    top: 240px;
+    left: 24px;
+    border-radius: 0 0 0 100%;
+    background-color: #F2BD00;
+    border-color: #bf9500; }
+
+  #yellow.light {
+    background-color: #ffcf26;
+    border-color: #F2BD00; }
+
+  #blue {
+    top: 240px;
+    left: 240px;
+    background-color: #0010DC;
+    border-radius: 0 0 100% 0;
+    border-color: #000ca9;
+    color: #1021ff; }
+
+  #blue.light {
+    background-color: #1021ff;
+    border-color: #0010DC; }
+
+  #vertical_line {
+    position: absolute;
+    left: 230.4px;
+    top: 24px;
+    width: 19.2px;
+    height: 432px;
+    background-color: #222;
+    z-index: 1; }
+
+  #horizontal_line {
+    position: absolute;
+    left: 24px;
+    top: 230.4px;
+    width: 432px;
+    height: 19.2px;
+    background-color: #222;
+    z-index: 1; }
+
+  #center {
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    width: 240px;
+    height: 240px;
+    background-color: #dee;
+    border-radius: 100%;
+    border: 19.2px solid #222;
+    z-index: 2;
+    text-align: center; }
+    #center h2 {
+      margin: 0;
+      padding: 24px;
+      font-family: 'Racing Sans One', cursive;
+      font-size: 43.2px;
+      margin-bottom: -13.92px; }
+    #center .lbl {
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: bold;
+      font-size: 11.04px; }
+    #center #counter,
+    #center #start,
+    #center #strict {
+      position: absolute; }
+    #center #counter {
+      left: 73.92px; }
+    #center #counter-box {
+      width: 53.28px;
+      height: 40.08px;
+      border: 3.024px solid #222;
+      border-radius: 10px;
+      background-color: #51594C;
+      box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5), inset -1px -1px 1px rgba(255, 255, 255, 0.5);
+      color: #111;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: "Roboto Mono", "Courier New", Courier, monospace; }
+    #center #counter-label {
+      padding-top: 3.024px; }
+    #center #start-button,
+    #center #strict-button {
+      cursor: pointer;
+      margin: auto;
+      width: 20.16px;
+      height: 20.16px;
+      border-radius: 100%;
+      /*need to fix this and set to % of width*/
+      box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.5), inset 0 -2px 3px 1px rgba(0, 0, 0, 0.8), 0 0 0 3.984px #222; }
+    #center #start-button:active,
+    #center #strict-button:active {
+      box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.5), 0 0 0 3.984px #222; }
+    #center #start {
+      top: 91.2px;
+      left: 24.96px; }
+    #center #start-button {
+      background-color: red; }
+    #center #strict {
+      top: 91.2px;
+      left: 139.2px; }
+    #center #strict-button {
+      background-color: yellow; }
+    #center #strict-light {
+      position: absolute;
+      top: -16.32px;
+      left: 15.84px;
+      width: 9.12px;
+      height: 9.12px;
+      border-radius: 100%;
+      border: 2.016px solid #222; }
+    #center .light-on {
+      background-color: red; }
+    #center .light-off {
+      background-color: #4d0000; }
+    #center #on-off-label {
+      z-index: -1; }
+      #center #on-off-label p {
+        position: absolute;
+        top: 168px; }
+      #center #on-off-label #on-label {
+        left: 56.64px; }
+      #center #on-off-label #off-label {
+        left: 127.44px; }
+    #center #on-off-toggle {
+      position: absolute;
+      top: 163.68px;
+      left: 79.2px;
+      width: 42.72px;
+      height: 23.04px;
+      border: 2px solid #222;
+      border-radius: 2px;
+      cursor: pointer;
+      background-color: #bbb;
+      font-size: 0;
+      /*To remove the extra space between the divs*/ }
+      #center #on-off-toggle .switch {
+        display: inline-block;
+        width: 50%;
+        height: 100%; }
+      #center #on-off-toggle .active {
+        background-color: red;
+        border-left: 3.84px solid #990000;
+        border-bottom: 3.36px solid #990000;
+        border-right: 1.44px solid #990000;
+        border-top: 1.44px solid #990000; }
+
+  #options {
+    position: relative;
+    top: -508.8px;
+    margin: auto;
+    width: 633.6px;
+    /* Make buttons closer to game board if screen is narrower */ } }
+  @media screen and (min-width: 501px) and (max-width: 633.6px) {
+    #options {
+      width: 480px; } }
+@media screen and (min-width: 501px) {
+    #options > button {
+      position: absolute;
+      width: 40.32px;
+      height: 40.32px;
+      border-radius: 100%;
+      outline: none;
+      box-shadow: 0px 3px 6px #aaa, inset 0px 2.0016px 3px #fff; }
+    #options > button:active {
+      box-shadow: 0px 1px 3.984px #aaa; }
+    #options > button:hover {
+      background: #f4f4f4; }
+    #options #help {
+      padding: 5.52px; }
+      #options #help .material-icons {
+        font-size: 28.008px;
+        height: 28.008px;
+        width: 28.008px; }
+    #options #sound {
+      left: 593.28px;
+      padding: 8.16px; } }
+    @media screen and (min-width: 501px) and (max-width: 633.6px) {
+      #options #sound {
+        left: 439.68px; } }
+@media screen and (min-width: 501px) {
+      #options #sound .material-icons {
+        font-size: 24px;
+        height: 24px;
+        width: 24px; } }
+
+/*# sourceMappingURL=styles.css.map */

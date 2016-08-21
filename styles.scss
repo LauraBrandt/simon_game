@@ -1,0 +1,280 @@
+/* The $width variable scales the whole game (all elements) up or down in size and spacing */
+@mixin styling($width) {
+  $background_color: #222;
+  $red: #F20000;
+  $green: #00D000;
+  $yellow: #F2BD00;
+  $blue: #0010DC;
+  body {
+    background: url("retina_wood_background.png");
+    /*via subtlepatterns.com*/
+	padding-top: 0.0625*$width;
+  }
+  #game_board {
+    position: relative;
+    margin: auto;
+    margin-top: $width*0.1;
+    height: $width;
+    width: $width;
+  }
+  #background {
+    background-color: $background-color;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: inset $width*-.02 $width*-.02 $width*.04 rgba(0, 0, 0, 0.3), 2px 2px $width*0.03, -2px -2px $width*0.03;
+    z-index: -1;
+  }
+  .quarter {
+    position: absolute;
+    width: $width*0.45;
+    height: $width*0.45;
+    border-style: solid;
+    border-width: $width*.008;
+  }
+  #red {
+    top: $width*0.05;
+    left: $width*0.5;
+    border-radius: 0 100% 0 0;
+    background-color: $red;
+    border-color: darken($red, 10%);
+  }
+  #red.light {
+    background-color: lighten($red, 10%);
+    border-color: $red;
+  }
+  #green {
+    top: $width*0.05;
+    left: $width*0.05;
+    border-radius: 100% 0 0 0;
+    background-color: $green;
+    border-color: darken($green, 10%);
+  }
+  #green.light {
+    background-color: lighten($green, 10%);
+    border-color: $green;
+  }
+  #yellow {
+    top: $width*0.5;
+    left: $width*0.05;
+    border-radius: 0 0 0 100%;
+    background-color: $yellow;
+    border-color: darken($yellow, 10%);
+  }
+  #yellow.light {
+    background-color: lighten($yellow, 10%);
+    border-color: $yellow;
+  }
+  #blue {
+    top: $width*0.5;
+    left: $width*0.5;
+    background-color: $blue;
+    border-radius: 0 0 100% 0;
+    border-color: darken($blue, 10%);
+    color: lighten($blue, 10%);
+  }
+  #blue.light {
+    background-color: lighten($blue, 10%);
+    border-color: $blue;
+  }
+  #vertical_line {
+    position: absolute;
+    left: $width*0.48;
+    top: $width*0.05;
+    width: $width*0.04;
+    height: $width*0.9;
+    background-color: $background-color;
+    z-index: 1;
+  }
+  #horizontal_line {
+    position: absolute;
+    left: $width*0.05;
+    top: $width*0.48;
+    width: $width*0.9;
+    height: $width*0.04;
+    background-color: $background-color;
+    z-index: 1;
+  }
+  #center {
+    position: absolute;
+    top: $width*0.25;
+    left: $width*0.25;
+    width: $width*0.5;
+    height: $width*0.5;
+    background-color: #dee;
+    border-radius: 100%;
+    border: $width*.04 solid $background_color;
+    z-index: 2;
+    text-align: center;
+    h2 {
+      margin: 0;
+      padding: $width*.05;
+      font-family: 'Racing Sans One', cursive;
+      font-size: $width*.09;
+      margin-bottom: -0.029*$width;
+    }
+    .lbl {
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: bold;
+      font-size: $width*0.023;
+    }
+    #counter,
+    #start,
+    #strict {
+      position: absolute;
+    }
+    #counter {
+      left: 0.154*$width;
+    }
+    #counter-box {
+      width: 0.111*$width;
+      height: 0.0835*$width;
+      border: 0.0063*$width solid $background_color;
+      border-radius: 10px;
+      background-color: #51594C;
+      box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5), inset -1px -1px 1px rgba(255, 255, 255, 0.5);
+      color: #111;
+      font-size: $width*0.05;
+      font-weight: bold;
+      font-family: "Roboto Mono", "Courier New", Courier, monospace;
+    }
+    #counter-label {
+      padding-top: 0.0063*$width;
+    }
+    #start-button,
+    #strict-button {
+      cursor: pointer;
+      margin: auto;
+      width: 0.042*$width;
+      height: 0.042*$width;
+      border-radius: 100%;
+      /*need to fix this and set to % of width*/
+      box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.5), inset 0 -2px 3px 1px rgba(0, 0, 0, 0.8), 0 0 0 0.0083*$width $background_color;
+    }
+    #start-button:active,
+    #strict-button:active {
+      box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.5), 0 0 0 0.0083*$width $background_color;
+    }
+    #start {
+      top: 0.19*$width;
+      left: 0.052*$width;
+    }
+    #start-button {
+      background-color: red;
+    }
+    #strict {
+      top: 0.19*$width;
+      left: 0.29*$width;
+    }
+    #strict-button {
+      background-color: yellow;
+    }
+    #strict-light {
+      position: absolute;
+      top: -0.034*$width;
+      left: 0.033*$width;
+      width: 0.019*$width;
+      height: 0.019*$width;
+      border-radius: 100%;
+      border: 0.0042*$width solid $background-color;
+    }
+    .light-on {
+      background-color: red;
+    }
+    .light-off {
+      background-color: darken(red, 35%);
+    }
+    #on-off-label {
+      z-index: -1;
+      p {
+        position: absolute;
+        top: $width*0.35;
+      }
+      #on-label {
+        left: $width*0.118;
+      }
+      #off-label {
+        left: $width*0.2655;
+      }
+    }
+    #on-off-toggle {
+      position: absolute;
+      top: 0.341*$width;
+      left: 0.165*$width;
+      width: 0.089*$width;
+      height: 0.048*$width;
+      border: 2px solid $background_color;
+      border-radius: 2px;
+      cursor: pointer;
+      background-color: #bbb;
+      font-size: 0;
+      /*To remove the extra space between the divs*/
+      .switch {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+      }
+      .active {
+        background-color: red;
+        border-left: $width*0.008 solid darken(red, 20%);
+        border-bottom: $width*.007 solid darken(red, 20%);
+        border-right: $width*0.003 solid darken(red, 20%);
+        border-top: $width*0.003 solid darken(red, 20%);
+      }
+    }
+  }
+  $button_width: 0.084*$width;
+  $button_distance: 0.32*$width;
+  $icon_size: 0.05*$width;
+  #options {
+    position: relative;
+    top: -$width - 0.06*$width;
+    margin: auto;
+    width: $width + $button_distance;
+    /* Make buttons closer to game board if screen is narrower */
+    @media screen and (max-width: $width + $button_distance) {
+      width: $width;
+    }
+    > button {
+      position: absolute;
+      width: $button_width;
+      height: $button_width;
+      border-radius: 100%;
+      outline: none;
+      box-shadow: 0px 0.00625*$width 0.0125*$width #aaa, inset 0px 0.00417*$width 0.00625*$width #fff;
+    }
+    > button:active {
+      box-shadow: 0px 1px 0.0083*$width #aaa;
+    }
+    > button:hover {
+      background: #f4f4f4;
+    }
+    #help {
+      padding: 0.0115*$width;
+      .material-icons {
+        font-size: 1.167*$icon_size;
+        height: 1.167*$icon_size;
+        width: 1.167*$icon_size;
+      }
+    }
+    #sound {
+      left: $width + $button_distance - $button_width;
+      @media screen and (max-width: $width + $button_distance) {
+      left: $width - $button_width;
+    }
+      padding: 0.017*$width;
+      .material-icons {
+        font-size: $icon_size;
+        height: $icon_size;
+        width: $icon_size;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  @include styling($width: 300px);
+}
+
+@media screen and (min-width: 501px) {
+  @include styling($width: 480px);
+}
